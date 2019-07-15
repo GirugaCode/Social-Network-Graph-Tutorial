@@ -66,9 +66,9 @@ class Graph:
         # TODO create a new vertex
         new_vertex = Vertex(key)
         # TODO add the new vertex to the vertex list
-        self.vert_list[new_vertex.add_neighbor] = new_vertex
+        self.vert_list[new_vertex] = new_vertex
         # TODO return the new vertex
-        # return new_vertex
+        return new_vertex
 
     def get_vertex(self, key):
         """return the vertex if it exists"""
