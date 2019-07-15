@@ -1,4 +1,4 @@
-#!python
+#!python3
 
 """ Vertex Class
 A helper class for the Graph class that defines vertices and vertex neighbors.
@@ -19,10 +19,10 @@ class Vertex(object):
 
     def add_neighbor(self, vertex, weight=0):
         """add a neighbor along a weighted edge"""
-        # TODO check if vertex is already a neighbor
+        #  check if vertex is already a neighbor
         if vertex not in self.neighbors:
             self.neighbors[vertex] = weight
-        # TODO if not, add vertex to neighbors and assign weight.
+        #  if not, add vertex to neighbors and assign weight.
 
     def __str__(self):
         """output the list of neighbors of this vertex"""
@@ -30,7 +30,7 @@ class Vertex(object):
 
     def get_neighbors(self):
         """return the neighbors of this vertex"""
-        # TODO return the neighbors
+        #  return the neighbors
         return self.neighbors
 
     def get_id(self):
@@ -39,7 +39,7 @@ class Vertex(object):
 
     def get_edge_weight(self, vertex):
         """return the weight of this edge"""
-        # TODO return the weight of the edge from this
+        #  return the weight of the edge from this
         # vertext to the given vertex.
         return self.neighbors[vertex]
 
@@ -61,35 +61,37 @@ class Graph:
         """add a new vertex object to the graph with
         the given key and return the vertex
         """
-        # TODO increment the number of vertices
+        #  increment the number of vertices
         self.num_verticies += 1
-        # TODO create a new vertex
+        #  create a new vertex
         new_vertex = Vertex(key)
-        # TODO add the new vertex to the vertex list
+        #  add the new vertex to the vertex list
         self.vert_list[key] = new_vertex
-        # TODO return the new vertex
+        #  return the new vertex
         return new_vertex
 
     def get_vertex(self, key):
         """return the vertex if it exists"""
-        # TODO return the vertex if it is in the graph
+        #  return the vertex if it is in the graph
         if key in self.vert_list:
             return self.vert_list[key]
 
     def add_edge(self, f, t, cost=0):
         """add an edge from vertex f to vertex t with a cost
         """
-        # TODO if either vertex is not in the graph,
+        #  if either vertex is not in the graph,
         # add it - or return an error (choice is up to you).
-        if f and t not in self.vert_list:
+        if f not in self.vert_list:
             self.add_vertex(f)
+        if t not in self.vert_list:
             self.add_vertex(t)
-        # TODO if both vertices in the graph, add the
+        #  if both vertices in the graph, add the
         # edge by making t a neighbor of f
         # and using the add_neighbor method of the Vertex class.
         if f and t in self.vert_list:
             self.vert_list[f].add_neighbor(self.vert_list[t], weight=0)
         # Hint: the vertex f is stored in self.vert_list[f].
+        
     def get_vertices(self):
         """return all the vertices in the graph"""
         return self.vert_list.keys()
@@ -140,6 +142,8 @@ if __name__ == "__main__":
     g.add_edge("Nick", "Jian")
     g.add_edge("Tim", "Ruhsane")
     g.add_edge("Luis", "Aaron")
+    g.add_edge("Luis", "Jian")
+    g.add_edge("Aaron", "Kevin")
 
     # Challenge 1: Output the vertices & edges
     # Print vertices
