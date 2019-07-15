@@ -66,16 +66,15 @@ class Graph:
         # TODO create a new vertex
         new_vertex = Vertex(key)
         # TODO add the new vertex to the vertex list
-        self.vert_list[new_vertex] = new_vertex
+        self.vert_list[key] = new_vertex
         # TODO return the new vertex
         return new_vertex
 
     def get_vertex(self, key):
         """return the vertex if it exists"""
         # TODO return the vertex if it is in the graph
-        for _ in self.vert_list:
-            if key == self.vert_list[key]:
-                return self.vert_list[key]
+        if key in self.vert_list:
+            return self.vert_list[key]
 
     def add_edge(self, f, t, cost=0):
         """add an edge from vertex f to vertex t with a cost
@@ -112,15 +111,35 @@ if __name__ == "__main__":
     g = Graph()
 
     # Add your friends
-    g.add_vertex("Friend 1")
-    g.add_vertex("Friend 2")
-    g.add_vertex("Friend 3")
+    g.add_vertex("Eddie")
+    g.add_vertex("Shawn")
+    g.add_vertex("Kevin")
+    g.add_vertex("Nick")
+    g.add_vertex("Tim")
+    g.add_vertex("Jian")
+    g.add_vertex("Aaron")
+    g.add_vertex("Luis")
+    g.add_vertex("Ruhsane")
 
     # ...  add all 10 including you ...
 
     # Add connections (non weighted edges for now)
-    g.add_edge("Friend 1", "Friend 2")
-    g.add_edge("Friend 2", "Friend 3")
+    g.add_edge("Eddie", "Shawn")
+    g.add_edge("Eddie", "Kevin")
+    g.add_edge("Eddie", "Nick")
+    g.add_edge("Eddie", "Tim")
+    g.add_edge("Eddie", "Jian")
+    g.add_edge("Shawn", "Kevin")
+    g.add_edge("Shawn", "Nick")
+    g.add_edge("Shawn", "Jian")
+    g.add_edge("Shawn", "Nick")
+    g.add_edge("Kevin", "Nick")
+    g.add_edge("Kevin", "Jian")
+    g.add_edge("Kevin", "Tim")
+    g.add_edge("Nick", "Tim")
+    g.add_edge("Nick", "Jian")
+    g.add_edge("Tim", "Ruhsane")
+    g.add_edge("Luis", "Aaron")
 
     # Challenge 1: Output the vertices & edges
     # Print vertices
