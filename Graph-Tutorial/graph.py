@@ -20,10 +20,8 @@ def main(text_file):
         graph.add_edge(edge[0], edge[1]) 
 
     # Challenge 1: Output the vertices & edges
-
     print(f"Verticies: {verts}")
     print("Edges:")
-
     for fromVert, toVert in edges:
         print(f"({fromVert}, {toVert})")
 
