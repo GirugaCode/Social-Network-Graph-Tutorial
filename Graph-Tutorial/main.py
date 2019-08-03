@@ -9,6 +9,7 @@ def main(text_file):
     Generate a graph from a file
     text_file -> name of file to open with graph data
     '''
+    # Challenge 1: Output the vertices & edges
     graph, verts, edges = read_file(text_file)
 
     # Adds all the vertexes to Graph
@@ -19,13 +20,24 @@ def main(text_file):
     for edge in edges:
         graph.add_edge(edge[0], edge[1]) 
 
-    # Challenge 1: Output the vertices & edges
-    print(f"Verticies: {verts}")
+    print("Challenge One --------------------")
+    print(f"Verticies:{verts}")
     print("Edges:")
     for fromVert, toVert in edges:
         print(f"({fromVert}, {toVert})")
 
+    print("Challenge Two -------------------")
+    for neighbor in graph.vert_dict:
+        print("Neighbors:", graph.vert_dict[neighbor])
+
+    print("Challenge Three -------------------")
+    print(graph.breadth_first_search("Ryan"))
+
+    print("Challenge Four ---------------------")
+
     return graph
+
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create a graph from text files")

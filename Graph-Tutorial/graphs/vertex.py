@@ -15,22 +15,21 @@ class Vertex:
         self.id = vertex
         self.neighbors = {}
 
-    def add_neighbor(self, vertex, weight=0):
-        """add a neighbor along a weighted edge"""
-        #  check if vertex is already a neighbor
-        if vertex not in self.neighbors:
-            self.neighbors[vertex] = weight
-            # print("weight:", weight)
-        #  if not, add vertex to neighbors and assign weight.
-
     def __str__(self):
         """output the list of neighbors of this vertex"""
         return str(self.id) + " adjacent to " + str([x.id for x in self.neighbors])
 
+    def add_neighbor(self, vertex, weight=0):
+        """add a neighbor along a weighted edge"""
+        #  check if vertex is already a neighbor
+        #  if not, add vertex to neighbors and assign weight.
+        if vertex not in self.neighbors:
+            self.neighbors[vertex] = weight
+
     def get_neighbors(self):
         """return the neighbors of this vertex"""
         #  return the neighbors
-        return self.neighbors
+        return self.neighbors.keys()
 
     def get_id(self):
         """return the id of this vertex"""
