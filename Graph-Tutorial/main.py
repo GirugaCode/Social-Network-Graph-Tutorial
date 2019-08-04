@@ -34,6 +34,10 @@ def main(text_file):
     print(graph.breadth_first_search("Ryan"))
 
     print("Challenge Four ---------------------")
+    print(graph.find_path("Eddie", "Ruhsane"))
+
+    print("Challenge Five ---------------------")
+    print(graph.find_shortest_path("Eddie", "Ruhsane"))
 
     return graph
 
