@@ -176,6 +176,18 @@ class Graph:
                 curr_vertex = curr_vertex.parent
             return path[::-1] # Reverse the list because we are traversing backwards
 
+    def clique(self):
+        
+        clique_result = set()
+        start_vertex = list(self.vert_dict.keys())[0]
+        clique_result.add(start_vertex)
+
+        for vertex in self.vert_dict:
+            if vertex not in clique_result:
+                if vertex in self.vert_dict[vertex].neighbors:
+                    clique_result.add(vertex)
+        return clique_result
+
 
     def __iter__(self):
         """iterate over the vertex objects in the

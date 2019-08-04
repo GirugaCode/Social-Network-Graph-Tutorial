@@ -39,6 +39,8 @@ def main(text_file):
     print("Challenge Five ---------------------")
     print(graph.find_shortest_path("Eddie", "Ruhsane"))
 
+    print("Challenge Six ----------------------")
+    print(graph.clique())
     return graph
 
     
